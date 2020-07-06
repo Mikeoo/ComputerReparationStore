@@ -39,7 +39,11 @@ namespace ComputerReparationStore.Controllers
         // GET: ReparationOrders/Create
         public ActionResult Create()
         {
-            return View();
+            ReparationOrder order = new ReparationOrder()
+            {
+                Customer = new Customer(),
+            };
+            return View( order );
         }
 
         // POST: ReparationOrders/Create
@@ -47,8 +51,9 @@ namespace ComputerReparationStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate,Status")] ReparationOrder reparationOrder)
+        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate,Status,Customer")] ReparationOrder reparationOrder)
         {
+            //reparationOrder.Customer = 
             if (ModelState.IsValid)
             {
                 db.ReparationOrders.Add(reparationOrder);
