@@ -21,6 +21,7 @@ namespace ComputerReparationStore.Models
     public class Customer
     {
         public int Id { get; set; }
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

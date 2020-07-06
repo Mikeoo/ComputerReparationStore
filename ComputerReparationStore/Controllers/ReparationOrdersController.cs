@@ -28,7 +28,7 @@ namespace ComputerReparationStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ReparationOrder reparationOrder = db.ReparationOrders.Find(id);
+            ReparationOrder reparationOrder = db.ReparationOrders.Include("Customer").FirstOrDefault(r => r.Id == id);
             if (reparationOrder == null)
             {
                 return HttpNotFound();
