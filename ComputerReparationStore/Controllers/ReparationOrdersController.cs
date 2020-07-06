@@ -18,7 +18,17 @@ namespace ComputerReparationStore.Controllers
         // GET: ReparationOrders
         public ActionResult Index()
         {
-            return View(db.ReparationOrders.ToList());
+            var roList = db.ReparationOrders.ToList();
+            var rovmList = new List<ReparationOrderVM>();
+            foreach (var ro in roList)
+            {
+                rovmList.Add(new ReparationOrderVM
+                {
+                    ReparationOrder = ro
+                });
+            }
+            
+            return View(rovmList);
         }
 
         // GET: ReparationOrders/Details/5

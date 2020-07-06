@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ComputerReparationStore.Models
 {
+    
     public class ReparationOrder
     {
         public int Id { get; set; }
@@ -16,6 +18,13 @@ namespace ComputerReparationStore.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public Status Status { get; set; }
+    }
+
+    [NotMapped]
+    public class ReparationOrderVM
+    {
+        public ReparationOrder ReparationOrder { get; set; }
+        public int AmmountDone { get; set; }
     }
 
     public class Customer
