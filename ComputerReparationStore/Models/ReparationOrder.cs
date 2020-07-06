@@ -11,10 +11,10 @@ namespace ComputerReparationStore.Models
     {
         public int Id { get; set; }
         public Customer Customer { get; set; }
-        [Display(Name = "Start Date")]
+        [Display(Name = "Planned Start Date")]
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
-        [Display(Name = "Eind Date")]
+        [Display(Name = "End Date")]
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public Status Status { get; set; }
@@ -24,7 +24,8 @@ namespace ComputerReparationStore.Models
     public class ReparationOrderVM
     {
         public ReparationOrder ReparationOrder { get; set; }
-        public int AmmountDone { get; set; }
+        public int AmountClosed { get; set; }
+
     }
 
     public class Customer

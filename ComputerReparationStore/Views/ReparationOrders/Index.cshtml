@@ -3,8 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
+<div>
+    Amount done:  @Html.DisplayNameFor(model => model.AmountClosed);
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
