@@ -13,7 +13,7 @@ namespace ComputerReparationStore.Controllers
 {
     public class ReparationOrdersController : Controller
     {
-        private ReparationOrderContext db = new ReparationOrderContext();
+        private readonly ReparationOrderContext db = new ReparationOrderContext();
 
         // GET: ReparationOrders
         public ActionResult Index()

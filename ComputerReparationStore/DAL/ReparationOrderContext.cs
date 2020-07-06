@@ -11,7 +11,7 @@ namespace ComputerReparationStore.DAL
 
         public DbSet<ReparationOrder> ReparationOrders { get; set; }
         public DbSet<Part> Parts { get; set; }
-        public DbSet<ListAllParts> ListAllParts { get; set; }
+        public DbSet<PartListItem> ListAllParts { get; set; }
         public DbSet<Customer> Customers { get; set; }
     }
 }

@@ -164,8 +164,10 @@ namespace ComputerReparationStore.Controllers
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
-            // Send an SMS through the SMS provider to verify the phone number
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
+                               // Send an SMS through the SMS provider to verify the phone number
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 

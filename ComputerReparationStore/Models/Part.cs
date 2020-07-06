@@ -1,7 +1,8 @@
 ﻿namespace ComputerReparationStore.Models
 {
-    public class Part : ListAllParts
+    public class Part
     {
         public bool InStock { get; set; }
+        public PartListItem PartListItem { get; set; }
     }
 }
