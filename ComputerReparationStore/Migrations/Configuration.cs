@@ -32,7 +32,6 @@ namespace ComputerReparationStore.Migrations
                 },
                 new ReparationOrder()
                 {
-                    Id = 2,
                     StartDate = new System.DateTime(2020, 07, 07),
                     EndDate = new System.DateTime(2020, 07, 10),
                     Status = Status.Awaiting,
